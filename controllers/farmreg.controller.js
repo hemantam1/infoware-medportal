@@ -57,10 +57,20 @@ exports.pdp = function(req, res){
     models.fpdetails.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/1/' + pid);
+    // res.redirect('/register/farmer/1/' + pid);
 }
 
 exports.reg1p = function(req, res){
@@ -70,10 +80,20 @@ exports.reg1p = function(req, res){
     models.help.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/2/' + req.params.id);
+    // res.redirect('/register/farmer/2/' + req.params.id);
 }
 
 exports.reg2p = function(req, res){
@@ -84,10 +104,20 @@ exports.reg2p = function(req, res){
     models.plantg.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/3/' + req.params.id);
+    // res.redirect('/register/farmer/3/' + req.params.id);
 }
 
 exports.reg3p =  function(req, res){
@@ -103,10 +133,20 @@ exports.reg3p =  function(req, res){
       models.valueadd.create(va, req.body.other, pid)
       .then(function(result){
           console.log(result);
+          return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
       }).catch(error => {
           console.log(error);
+          return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
       });
-    res.redirect('/register/farmer/4/' + req.params.id);
+    // res.redirect('/register/farmer/4/' + req.params.id);
 }
 
 exports.reg4p = function(req, res){
@@ -116,10 +156,20 @@ exports.reg4p = function(req, res){
     models.organic.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/5/' + req.params.id);
+    // res.redirect('/register/farmer/5/' + req.params.id);
 }
 
 exports.reg5p = function(req, res){
@@ -129,10 +179,20 @@ exports.reg5p = function(req, res){
     models.farmbuyer.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/6/' + req.params.id);
+    // res.redirect('/register/farmer/6/' + req.params.id);
 }
 
 exports.reg6p = function(req, res){
@@ -142,10 +202,20 @@ exports.reg6p = function(req, res){
     models.problem.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/7/' + req.params.id);
+    // res.redirect('/register/farmer/7/' + req.params.id);
 }
 
 exports.reg7p = function(req, res){
@@ -156,10 +226,20 @@ exports.reg7p = function(req, res){
     models.experiment.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/8/' + req.params.id);
+    // res.redirect('/register/farmer/8/' + req.params.id);
 }
 
 exports.reg8p = function(req, res){
@@ -169,10 +249,20 @@ exports.reg8p = function(req, res){
     models.futureplant.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/9/' + req.params.id);
+    // res.redirect('/register/farmer/9/' + req.params.id);
 }
 
 exports.reg9p = function(req, res){
@@ -182,10 +272,20 @@ exports.reg9p = function(req, res){
     models.nearbyfarmer.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/10/' + req.params.id);
+    // res.redirect('/register/farmer/10/' + req.params.id);
 }
 
 exports.reg10p = function(req, res){
@@ -195,8 +295,18 @@ exports.reg10p = function(req, res){
     models.dof.create(fpd)
     .then(function(result){
         console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
     }).catch(error => {
         console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/');
+    // res.redirect('/');
 }

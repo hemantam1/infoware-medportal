@@ -9,11 +9,13 @@ module.exports = function(sequelize, Sequelize) {
         },
  
         username: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false
         },
  
         type : {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false
         },
  
         password: {

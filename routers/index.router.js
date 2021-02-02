@@ -7,23 +7,54 @@ const farmlogin = require('../services/farmauth.js');
 router.get('/', index.home);
 
 router.get('/login', index.login);
+// router.post('/login',  passport.authenticate('local-signin', {
+//     successRedirect: '/admin',
+
+//     failureRedirect: '/login'
+// }
+
+// ));
+
 router.post('/login',  passport.authenticate('local-signin', {
-    successRedirect: '/admin',
+    successRedirect: '/signup/success',
 
-    failureRedirect: '/login'
+    failureRedirect: '/signup/failure'
 }
-
 ));
 
 router.get('/logout',index.logout);
 
 router.get('/signup', index.signup);
+// router.post('/signup', passport.authenticate('local-signup', {    
+//     failureRedirect: '/signup'
+// }), (req, res) => {
+//     if(req.user.type === 'buyer') res.send('Buyer Reg in progress');
+//     if(req.user.type === 'farmer') res.redirect('/register/farmer/' + req.user.id);
+//     res.redirect('/');
+// });
+
 router.post('/signup', passport.authenticate('local-signup', {    
-    failureRedirect: '/signup'
+    failureRedirect: '/signup/failure'
 }), (req, res) => {
-    if(req.user.type === 'buyer') res.send('Buyer Reg in progress');
-    if(req.user.type === 'farmer') res.redirect('/register/farmer/' + req.user.id);
-    res.redirect('/');
+    if(req.user.type === 'buyer') res.redirect('/signup/success');
+    if(req.user.type === 'farmer') res.redirect('/signup/success');
+    // res.redirect('/signup/failure');
+});
+
+router.get("/signup/failure",(req,res)=>{
+    return res.status(400).json({
+        status: "failure",
+        message: "Some error ocurred!",
+        data: null,
+    });
+});
+
+router.get("/signup/success",(req,res)=>{
+    return res.status(200).json({
+        status: "success",
+        message: "Successfully registered or logged in (if already registered)!!",
+        data: null,
+    });
 });
 
 router.get('/admin',isLoggedIn,index.adminpage);

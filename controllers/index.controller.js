@@ -14,7 +14,11 @@ exports.logout = function(req, res) {
  
     req.session.destroy(function(err) {
  
-        res.redirect('/');
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully logout!!",
+            data: null,
+        });
  
     });
  

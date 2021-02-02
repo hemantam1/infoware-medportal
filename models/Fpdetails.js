@@ -9,7 +9,8 @@ module.exports = function(sequelize, Sequelize) {
         },
  
         name: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false
         },
  
         surname : {
@@ -41,7 +42,8 @@ module.exports = function(sequelize, Sequelize) {
         },
 
         phoneno : {
-            type : Sequelize.BIGINT
+            type : Sequelize.BIGINT,
+            allowNull: false
         },
 
         altphoneno : {

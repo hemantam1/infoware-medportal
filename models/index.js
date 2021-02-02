@@ -8,6 +8,22 @@ const sequelize = new Sequelize('Zg7Vzv2yI5', 'Zg7Vzv2yI5', 'wKZYN50IOH', {
     dialect: 'mysql'
 });
 
+// const sequelize = new Sequelize("agri_portal", "root", "", {
+//     define: {
+//       charset: "utf8mb4",
+//     },
+//     host: "localhost",
+//     dialect: "mysql",
+//     pool: {
+//         max: 5,
+//         min: 0,
+//         acquire: 30000,
+//         idle: 10000,
+//     },
+//     // logging: false,
+//     logging: console.log,
+//   });
+
 const db = {};
 
  
