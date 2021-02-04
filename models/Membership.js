@@ -8,9 +8,9 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
  
-        username: {
-            type: Sequelize.TEXT
-        },
+        // username: {
+        //     type: Sequelize.TEXT
+        // },
          
         type: {
             type: Sequelize.TEXT
@@ -19,6 +19,11 @@ module.exports = function(sequelize, Sequelize) {
         duration: {
             type: Sequelize.TEXT
         },
+        
+        amount: {
+            type: Sequelize.INTEGER
+        },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

@@ -188,3 +188,5 @@ app.post('/register/buyer/12/:id', function(req, res){
     });
     res.redirect('/');
 });
+
+module.exports = router;

@@ -310,3 +310,31 @@ exports.reg10p = function(req, res){
     });
     // res.redirect('/');
 }
+
+exports.memF = function(req, res){
+    var memb = req.body;
+    var pid = req.params.id;
+    memb.userid = pid;
+    models.membership.create(memb)
+    .then(function(result){
+        console.log(result);
+        models.user.findByPk(pid).then(user=>{
+            user.membership_id=result.ms_id;
+            user.save();
+            console.log(user);
+        });
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully given the membership to farmer!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+    });
+    // res.redirect('/');
+}

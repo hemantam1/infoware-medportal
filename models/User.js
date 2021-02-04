@@ -30,6 +30,15 @@ module.exports = function(sequelize, Sequelize) {
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
+        },
+
+        membership_id: {
+            type: Sequelize.INTEGER,
+            // references: {
+            //   model: 'membership', // Can be both a string representing the table name or a Sequelize model
+            //   key: 'id'
+            // },
+            defaultValue: -1
         }
     });
  

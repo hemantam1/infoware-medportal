@@ -51,5 +51,7 @@ router.get('/register/farmer/10/:id', index.reg10);
 
 router.post('/register/farmer/10/:id', index.reg10p);
 
+router.post('/membership/farmer/:id', index.memF);
+
 
 module.exports = router;
