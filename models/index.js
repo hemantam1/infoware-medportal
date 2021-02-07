@@ -2,27 +2,27 @@ const {Sequelize} = require("sequelize");
 var fs = require("fs");
 var path = require("path");
 
-const sequelize = new Sequelize('Zg7Vzv2yI5', 'Zg7Vzv2yI5', 'wKZYN50IOH', {
-    host: 'remotemysql.com',
-    port : 3306,
-    dialect: 'mysql'
-});
+// const sequelize = new Sequelize('Zg7Vzv2yI5', 'Zg7Vzv2yI5', 'wKZYN50IOH', {
+//     host: 'remotemysql.com',
+//     port : 3306,
+//     dialect: 'mysql'
+// });
 
-// const sequelize = new Sequelize("agri_portal2", "root", "", {
-//     define: {
-//       charset: "utf8mb4",
-//     },
-//     host: "localhost",
-//     dialect: "mysql",
-//     pool: {
-//         max: 5,
-//         min: 0,
-//         acquire: 30000,
-//         idle: 10000,
-//     },
-//     // logging: false,
-//     logging: console.log,
-//   });
+const sequelize = new Sequelize("agri_portal2", "root", "", {
+    define: {
+      charset: "utf8mb4",
+    },
+    host: "localhost",
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000,
+    },
+    // logging: false,
+    logging: console.log,
+  });
 
 const db = {};
 

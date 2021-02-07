@@ -6,158 +6,363 @@ exports.reg = function(req, res){
 }
 
 exports.reg1 =  function(req, res){
-    res.render('farmer_register1.ejs', {pid: req.params.id});
+    res.render('buyer_register1.ejs', {pid: req.params.id});
 }
 
 exports.reg2 =  function(req, res){
-    res.render('farmer_register2.ejs', {pid: req.params.id});
+    res.render('buyer_register2.ejs', {pid: req.params.id});
 }
 
 exports.reg3 = function(req, res){
-    res.render('farmer_register3.ejs', {pid: req.params.id});
+    res.render('buyer_register3.ejs', {pid: req.params.id});
 }
 
 exports.reg4 = function(req, res){
-    res.render('farmer_register4.ejs', {pid: req.params.id});
+    res.render('buyer_register4.ejs', {pid: req.params.id});
 }
 
 exports.reg5 = function(req, res){
-    res.render('farmer_register5.ejs', {pid: req.params.id});
+    res.render('buyer_register5.ejs', {pid: req.params.id});
 }
 
 exports.reg6 = function(req, res){
-    res.render('farmer_register6.ejs', {pid: req.params.id});
+    res.render('buyer_register6.ejs', {pid: req.params.id});
 }
 
 exports.reg7 = function(req, res){
-    res.render('farmer_register7.ejs', {pid: req.params.id});
+    res.render('buyer_register7.ejs', {pid: req.params.id});
 }
 
 exports.reg8 = function(req, res){
-    res.render('farmer_register8.ejs', {pid: req.params.id});
+    res.render('buyer_register8.ejs', {pid: req.params.id});
 }
 
 exports.reg9 =  function(req, res){
-    res.render('farmer_register9.ejs', {pid: req.params.id});
+    res.render('buyer_register9.ejs', {pid: req.params.id});
 }
 
 exports.reg10 = function(req, res){
-    res.render('farmer_register10.ejs', {pid: req.params.id});
+    res.render('buyer_register10.ejs', {pid: req.params.id});
 }
 
-exports.pdp = function(req, res){
-    console.log(req.body);
-    var pid = req.params.id;
-    var sqlquerypd = 'INSERT INTO farmerPDetails SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, pid], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
-    });
-    res.redirect('/register/farmer/1/' + pid);
+exports.reg11 = function(req, res){
+    res.render('buyer_register11.ejs', {pid: req.params.id});
+}
+
+exports.reg12 = function(req, res){
+    res.render('buyer_register12.ejs', {pid: req.params.id});
 }
 
 exports.reg1p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO help SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.buyerpdetails.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/2/' + req.params.id);
 }
 
 exports.reg2p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO plantg SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
-    });
-    res.redirect('/register/farmer/3/' + req.params.id);
-}
-
-exports.reg3p =  function(req, res){
     // console.log(req.body);
-    for (var va in req.body.va) {
-        if (req.body.va) {
-          items = req.body.va;
-          va = JSON.stringify(items).replace(/]|[[]|"/g, '',)
-        }
-      }
-    var sqlquerypd = 'INSERT INTO valueadd (va, other, farmer_id) VALUE (?, ?,?)'
-    mysqlConnection.query(sqlquerypd, [va, req.body.other, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.buyercdetails.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/4/' + req.params.id);
 }
 
-exports.reg4p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO organic SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+exports.reg3p = function(req, res){
+    // console.log(req.body);
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.plantused.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/5/' + req.params.id);
 }
 
-exports.reg5p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO farmbuyer SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
-    });
-    res.redirect('/register/farmer/6/' + req.params.id);
+exports.reg4p =  function(req, res){
+    // console.log(req.body);
+    // for (var ptest in req.body.ptest) {
+    //     if (req.body.ptest) {
+    //       items = req.body.ptest;
+    //       ptest = JSON.stringify(items).replace(/]|[[]|"/g, '',)
+    //     }
+    // }
+    //   var pid = req.params.id;
+    // //   fpd.userid = pid;
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+      models.providetest.create(fpd)
+      .then(function(result){
+          console.log(result);
+          return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+      }).catch(error => {
+          console.log(error);
+          return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+      });
+}
+
+exports.reg5p =  function(req, res){
+    // console.log(req.body);
+    // for (var test in req.body.test) {
+    //     if (req.body.test) {
+    //       items = req.body.test;
+    //       test = JSON.stringify(items).replace(/]|[[]|"/g, '',)
+    //     }
+    // }
+    //   var pid = req.params.id;
+    // //   fpd.userid = pid;
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+      models.test.create(fpd)
+      .then(function(result){
+          console.log(result);
+          return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+      }).catch(error => {
+          console.log(error);
+          return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+      });
 }
 
 exports.reg6p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO problem SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.lab.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/7/' + req.params.id);
+    // res.redirect('/register/farmer/7/' + req.params.id);
 }
 
 exports.reg7p = function(req, res){
     console.log(req.body);
-    var sqlquerypd = 'INSERT INTO experiment SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.routinesup.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/8/' + req.params.id);
+    // res.redirect('/register/farmer/8/' + req.params.id);
 }
 
 exports.reg8p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO futureplant SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.geoorigin.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/9/' + req.params.id);
 }
 
 exports.reg9p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO nearbyFarmer SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.buyproblem.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/register/farmer/10/' + req.params.id);
 }
 
 exports.reg10p = function(req, res){
-    console.log(req.body);
-    var sqlquerypd = 'INSERT INTO dateoffilling SET ?, farmer_id = ?'
-    mysqlConnection.query(sqlquerypd, [req.body, req.params.id], function(error, result){
-        if(error)console.log(error);
-        if(!error) console.log('Record Added');
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.buyfutureplant.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
     });
-    res.redirect('/');
+}
+
+exports.reg11p = function(req, res){
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.nearbybuyer.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+    });
+}
+
+exports.reg12p = function(req, res){
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    models.buyerdof.create(fpd)
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully filled the details!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+    });
+}
+
+exports.memB = function(req, res){
+    var memb = req.body;
+    var pid = req.params.id;
+    memb.userid = pid;
+    models.membership.create(memb)
+    .then(function(result){
+        console.log(result);
+        models.user.findByPk(pid).then(user=>{
+            user.membership_id=result.ms_id;
+            user.save();
+            console.log(user);
+        });
+        return res.status(200).json({
+            status: "success",
+            message: "Successfully given the membership to buyer!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+    });
 }
