@@ -33,11 +33,13 @@ const rout = require('./routers/index.router.js');
 const farmreg = require('./routers/farmreg.router.js');
 const buyreg = require('./routers/buyreg.router.js');
 const admin = require('./routers/admin.router.js');
+const post_requirement = require('./routers/post_requirement.router.js');
 
 app.use('/', rout);
 app.use('/', farmreg);
 app.use('/', buyreg);
 app.use('/', admin);
+app.use('/',post_requirement);
 
 // app.get('/yip', function(req, res){
 //     models.user.findAll()
