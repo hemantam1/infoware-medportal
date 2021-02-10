@@ -42,3 +42,26 @@ exports.allFarmers = function(req, res){
         });
     });
 }
+
+
+exports.allPlants = function(req, res){
+    models.postrequirementfarmer.findAll({
+        where: {}
+    })
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Details of all Plants!!",
+            total_plants: result.length,
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+    });
+}

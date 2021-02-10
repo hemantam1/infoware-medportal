@@ -5,4 +5,6 @@ router.get('/admin/all/buyers', index.allBuyers);
 
 router.get('/admin/all/farmers', index.allFarmers);
 
+router.get('/admin/all/plants', index.allPlants);
+
 module.exports = router;
