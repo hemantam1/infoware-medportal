@@ -65,3 +65,22 @@ exports.allPlants = function(req, res){
         });
     });
 }
+
+exports.allMemberships = function(req, res){
+    models.membership.findAll({})
+    .then(function(result){
+        console.log(result);
+        return res.status(200).json({
+            status: "success",
+            message: "Details of all memberships taken by users!!",
+            data: result,
+        });
+    }).catch(error => {
+        console.log(error);
+        return res.status(400).json({
+            status: "failure",
+            message: "Some error ocurred!",
+            data: null,
+        });
+    });
+}

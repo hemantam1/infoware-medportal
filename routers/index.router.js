@@ -16,7 +16,7 @@ router.get('/login', index.login);
 // ));
 
 router.post('/login',  passport.authenticate('local-signin', {
-    successRedirect: '/signup/success',
+    successRedirect: '/signin/success',
 
     failureRedirect: '/signup/failure'
 }
@@ -57,9 +57,17 @@ router.get("/signup/success",(req,res)=>{
     });
 });
 
-router.get('/admin',isLoggedIn,index.adminpage);
+router.get("/signin/success",(req,res)=>{
+    return res.status(200).json({
+        status: "success",
+        message: "Successfully logged in (if already registered)!!",
+        data: null,
+    });
+});
 
-router.get('/admin/allfarmer', index.allfarmer);
+// router.get('/admin',isLoggedIn,index.adminpage);
+
+// router.get('/admin/allfarmer', index.allfarmer);
 
 // router.get('/admin/allfarmer/:id', function(req, res){
 //     // console.log(req.params.id);
@@ -67,7 +75,7 @@ router.get('/admin/allfarmer', index.allfarmer);
 //         res.send(result);
 //     });
 // });
-router.get('/admin/allbuyer', index.allbuyer);
+// router.get('/admin/allbuyer', index.allbuyer);
 
 
 
@@ -78,9 +86,9 @@ router.get('/admin/allbuyer', index.allbuyer);
 //     });
 // });
 
-router.get('/admin/membership', index.membership);
+// router.get('/admin/membership', index.membership);
 
-router.get('/membership', farmlogin, function(req, res){
-    res.render('membership.ejs');
-});
+// router.get('/membership', farmlogin, function(req, res){
+//     res.render('membership.ejs');
+// });
 module.exports = router;
