@@ -10,7 +10,7 @@ module.exports = function(sequelize, Sequelize) {
  
         area_name: {
             type: Sequelize.TEXT,
-            allowNull: false
+            // allowNull: false
         },
 
         pincode: {

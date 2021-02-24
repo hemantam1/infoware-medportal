@@ -10,7 +10,7 @@ module.exports = function(sequelize, Sequelize) {
  
         district_name: {
             type: Sequelize.TEXT,
-            allowNull: false
+            // allowNull: false
         },
 
         stateId: {

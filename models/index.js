@@ -8,7 +8,7 @@ var path = require("path");
 //     dialect: 'mysql'
 // });
 
-const sequelize = new Sequelize("agri_portal2", "root", "", {
+const sequelize = new Sequelize("agri_portal4", "root", "", {
     define: {
       charset: "utf8mb4",
     },
