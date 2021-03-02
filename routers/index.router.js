@@ -3,6 +3,7 @@ var index = require('../controllers/index.controller.js');
 var passport = require('passport');
 const isLoggedIn = require('../services/auth.js');
 const farmlogin = require('../services/farmauth.js');
+var models = require('../models');
 
 router.get('/', index.home);
 
@@ -15,12 +16,30 @@ router.get('/login', index.login);
 
 // ));
 
-router.post('/login',  passport.authenticate('local-signin', {
-    successRedirect: '/signin/success',
+// router.post('/login',  passport.authenticate('local-signin', {
+//     successRedirect: '/signin/success',
 
+//     failureRedirect: '/signup/failure'
+// }
+// ));
+
+router.post('/login', passport.authenticate('local-signin', {    
     failureRedirect: '/signup/failure'
-}
-));
+}), (req, res) => {
+
+    console.log(req.body.type);
+    console.log(req.user.type);
+    console.log(req.user.id);
+    if(req.body.type!=req.user.type){
+        return res.status(400).json({
+            status: "failure",
+            message: "User type does not match!! Can't login",
+            data: null,
+        });
+    }
+    res.redirect('/signin/success');
+    // res.redirect('/signup/failure');
+});
 
 router.get('/logout',index.logout);
 
@@ -91,4 +110,5 @@ router.get("/signin/success",(req,res)=>{
 // router.get('/membership', farmlogin, function(req, res){
 //     res.render('membership.ejs');
 // });
+
 module.exports = router;
