@@ -37,7 +37,12 @@ router.post('/login', passport.authenticate('local-signin', {
             data: null,
         });
     }
-    res.redirect('/signin/success');
+    return res.status(200).json({
+        status: "success",
+        message: "Successfully logged in !!",
+        data: null,
+    });
+    // res.redirect('/signin/success');
     // res.redirect('/signup/failure');
 });
 
@@ -55,8 +60,13 @@ router.get('/signup', index.signup);
 router.post('/signup', passport.authenticate('local-signup', {    
     failureRedirect: '/signup/failure'
 }), (req, res) => {
-    if(req.user.type === 'buyer') res.redirect('/signup/success');
-    if(req.user.type === 'farmer') res.redirect('/signup/success');
+    return res.status(200).json({
+        status: "success",
+        message: "Successfully registered or logged in (if already registered)!!",
+        data: null,
+    });
+    // if(req.user.type === 'buyer') res.redirect('/signup/success');
+    // if(req.user.type === 'farmer') res.redirect('/signup/success');
     // res.redirect('/signup/failure');
 });
 
@@ -68,21 +78,21 @@ router.get("/signup/failure",(req,res)=>{
     });
 });
 
-router.get("/signup/success",(req,res)=>{
-    return res.status(200).json({
-        status: "success",
-        message: "Successfully registered or logged in (if already registered)!!",
-        data: null,
-    });
-});
+// router.get("/signup/success",(req,res)=>{
+//     return res.status(200).json({
+//         status: "success",
+//         message: "Successfully registered or logged in (if already registered)!!",
+//         data: null,
+//     });
+// });
 
-router.get("/signin/success",(req,res)=>{
-    return res.status(200).json({
-        status: "success",
-        message: "Successfully logged in (if already registered)!!",
-        data: null,
-    });
-});
+// router.get("/signin/success",(req,res)=>{
+//     return res.status(200).json({
+//         status: "success",
+//         message: "Successfully logged in (if already registered)!!",
+//         data: null,
+//     });
+// });
 
 // router.get('/admin',isLoggedIn,index.adminpage);
 
