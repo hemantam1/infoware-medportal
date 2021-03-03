@@ -5,8 +5,9 @@ const {Sequelize} = require("sequelize");
 var methodOverride = require('method-override');
 var passport = require('passport')
 var session = require('express-session')
+const cors = require("cors");
 
-
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
