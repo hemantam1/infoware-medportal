@@ -5,9 +5,9 @@ router.get('/register/farmer/:id', index.reg);
 
 router.get('/register/farmer/personalDetails/:id',index.pd);
 
-router.post('/register/farmer/personalDetails/:id', index.pdp);
+// router.post('/register/farmer/personalDetails/:id', index.pdp);
 
-router.get('/register/farmer/1/:id',index.reg1);
+// router.get('/register/farmer/1/:id',index.reg1);
 
 router.post('/register/farmer/1/:id', index.reg1p);
 

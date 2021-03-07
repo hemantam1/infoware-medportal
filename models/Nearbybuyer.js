@@ -15,12 +15,15 @@ module.exports = function(sequelize, Sequelize) {
         address: {
             type: Sequelize.TEXT
         }, 
-        mobileno: {
+
+        pin_code_number : {
             type: Sequelize.BIGINT
-        }, 
-        pin: {
-            type: Sequelize.TEXT
         },
+
+        mobile: {
+            type: Sequelize.BIGINT
+        },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

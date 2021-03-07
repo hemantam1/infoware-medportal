@@ -7,26 +7,31 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
+
+        yes_or_no:{
+            type: Sequelize.TEXT
+        },
  
-        name: {
+        name_of_organic_farm_certifying_agency: {
             type: Sequelize.TEXT
         },
         
-        regdate: {
+        date_and_year_of_registration: {
             type: Sequelize.DATE
         },
         
-        regno: {
+        registration_no: {
             type: Sequelize.BIGINT
         },
         
-        certificate: {
-            type: Sequelize.TEXT
-        },
+        // certificate: {
+        //     type: Sequelize.TEXT
+        // },
         
-        labreport: {
-            type: Sequelize.TEXT
+        have_you_done_any_lab_test: {
+            type: Sequelize.TEXT //yes or no
         },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

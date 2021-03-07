@@ -9,10 +9,23 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
- 
-        date: {
+
+        name: {
+            type: Sequelize.TEXT
+        },
+        
+        mobile: {
+            type: Sequelize.BIGINT
+        },
+
+        address: {
+            type: Sequelize.TEXT
+        }, 
+
+        date_of_filling: {
             type: Sequelize.DATE
         },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

@@ -10,73 +10,132 @@ module.exports = function(sequelize, Sequelize) {
  
         name: {
             type: Sequelize.TEXT,
-            allowNull: false
         },
  
         surname : {
             type: Sequelize.TEXT
         },
 
-        fhname : {
+        father_or_husband_name : {
             type: Sequelize.TEXT
         },
 
-        hno : {
+        address : {
             type: Sequelize.TEXT
         },
 
-        village : {
+        village1 : {
             type: Sequelize.TEXT
         },
 
-        taluka : {
+        taluka1 : {
             type: Sequelize.TEXT
         },
 
-        pin : {
+        district1 : {
             type: Sequelize.TEXT
         },
 
-        email : {
-            type: Sequelize.TEXT
+        pin_code : {
+            type: Sequelize.BIGINT
         },
 
-        phoneno : {
+        phone : {
+            type: Sequelize.BIGINT
+        },
+
+        mobile : {
             type : Sequelize.BIGINT,
-            allowNull: false
         },
 
-        altphoneno : {
+        whatsApp: {
             type : Sequelize.BIGINT
         },
 
-        whatphoneno : {
+        telegram : {
             type : Sequelize.BIGINT
         },
-        telegphoneno : {
-            type : Sequelize.BIGINT
+
+        email_id : {
+            type: Sequelize.TEXT
         },
+
         aadharno : {
             type : Sequelize.BIGINT
         },
-        landrevenuerno : {
+
+        land_revenue_record_no : {
             type : Sequelize.BIGINT
         },
-        vill : {
-            type : Sequelize.TEXT
+
+        village2 : {
+            type: Sequelize.TEXT
         },
-        talu : {
-            type : Sequelize.TEXT
+
+        taluka2 : {
+            type: Sequelize.TEXT
         },
-        dist : {
-            type : Sequelize.TEXT
+
+        district2 : {
+            type: Sequelize.TEXT
         },
-        surveyno : {
+
+        survey_number_sub_survey_number  : {
             type : Sequelize.BIGINT
         },
-        area : {
+
+        acre_hectare_goontha  : {
             type : Sequelize.TEXT
         },
+
+        govt_or_non_govt_help : {
+            type: Sequelize.TEXT
+        },
+
+        help_fo_cultivation_crop : {
+            type: Sequelize.TEXT
+        },
+
+        help_fo_cultivation_rs : {
+            type: Sequelize.TEXT
+        },
+
+        help_fo_cultivation_year : {
+            type: Sequelize.TEXT
+        },
+
+        for_machine_or_machine_material_rs : {
+            type: Sequelize.TEXT
+        },
+
+        for_machine_or_machine_material_year : {
+            type: Sequelize.TEXT
+        },
+
+        for_storage_shelter_rs : {
+            type: Sequelize.TEXT
+        },
+
+        for_storage_shelter_year : {
+            type: Sequelize.TEXT
+        },
+
+        for_seeds_seedlings_grafting_crop : {
+            type: Sequelize.TEXT
+        },
+
+        for_seeds_seedlings_grafting_rs : {
+            type: Sequelize.TEXT
+        },
+
+        for_seeds_seedlings_grafting_year : {
+            type: Sequelize.TEXT
+        },
+
+        other : {
+            type: Sequelize.TEXT
+        },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

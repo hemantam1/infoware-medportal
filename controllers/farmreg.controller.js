@@ -49,7 +49,7 @@ exports.reg10 = function(req, res){
     res.render('farmer_register10.ejs', {pid: req.params.id});
 }
 
-exports.pdp = function(req, res){
+exports.reg1p = function(req, res){
     // console.log(req.body);
     var fpd = req.body;
     var pid = req.params.id;
@@ -70,30 +70,6 @@ exports.pdp = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/1/' + pid);
-}
-
-exports.reg1p = function(req, res){
-    var fpd = req.body;
-    var pid = req.params.id;
-    fpd.userid = pid;
-    models.help.create(fpd)
-    .then(function(result){
-        console.log(result);
-        return res.status(200).json({
-            status: "success",
-            message: "Successfully filled the details!!",
-            data: result,
-        });
-    }).catch(error => {
-        console.log(error);
-        return res.status(400).json({
-            status: "failure",
-            message: "Some error ocurred!",
-            data: null,
-        });
-    });
-    // res.redirect('/register/farmer/2/' + req.params.id);
 }
 
 exports.reg2p = function(req, res){
@@ -101,6 +77,10 @@ exports.reg2p = function(req, res){
     var fpd = req.body;
     var pid = req.params.id;
     fpd.userid = pid;
+    // const obj={
+    //     list_of_all_records_entered_by_farmer: req.body.list_of_all_records_entered_by_farmer,
+    //     userid: pid
+    // }
     models.plantg.create(fpd)
     .then(function(result){
         console.log(result);
@@ -117,20 +97,25 @@ exports.reg2p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/3/' + req.params.id);
 }
 
 exports.reg3p =  function(req, res){
     // console.log(req.body);
-    for (var va in req.body.va) {
-        if (req.body.va) {
-          items = req.body.va;
-          va = JSON.stringify(items).replace(/]|[[]|"/g, '',)
-        }
-      }
-      var pid = req.params.id;
-    //   fpd.userid = pid;
-      models.valueadd.create(va, req.body.other, pid)
+    // for (var va in req.body.va) {
+    //     if (req.body.va) {
+    //       items = req.body.va;
+    //       va = JSON.stringify(items).replace(/]|[[]|"/g, '',)
+    //     }
+    //   }
+    var fpd = req.body;
+    var pid = req.params.id;
+    fpd.userid = pid;
+    // const obj={
+    //     yes_or_no: req.body.yes_or_no,
+    //     list_of_all_records_entered_by_farmer: req.body.list_of_all_records_entered_by_farmer,
+    //     userid: pid
+    // }
+      models.valueadd.create(fpd)
       .then(function(result){
           console.log(result);
           return res.status(200).json({
@@ -146,7 +131,6 @@ exports.reg3p =  function(req, res){
             data: null,
         });
       });
-    // res.redirect('/register/farmer/4/' + req.params.id);
 }
 
 exports.reg4p = function(req, res){
@@ -169,7 +153,6 @@ exports.reg4p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/5/' + req.params.id);
 }
 
 exports.reg5p = function(req, res){
@@ -192,7 +175,6 @@ exports.reg5p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/6/' + req.params.id);
 }
 
 exports.reg6p = function(req, res){
@@ -215,11 +197,10 @@ exports.reg6p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/7/' + req.params.id);
 }
 
 exports.reg7p = function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
     var fpd = req.body;
     var pid = req.params.id;
     fpd.userid = pid;
@@ -239,7 +220,6 @@ exports.reg7p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/8/' + req.params.id);
 }
 
 exports.reg8p = function(req, res){
@@ -262,7 +242,6 @@ exports.reg8p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/9/' + req.params.id);
 }
 
 exports.reg9p = function(req, res){
@@ -285,7 +264,6 @@ exports.reg9p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/10/' + req.params.id);
 }
 
 exports.reg10p = function(req, res){
@@ -308,7 +286,6 @@ exports.reg10p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/');
 }
 
 exports.memF = function(req, res){
