@@ -35,12 +35,14 @@ router.post('/login', passport.authenticate('local-signin', {
             status: "failure",
             message: "User type does not match!! Can't login",
             data: null,
+            userId: req.user.id
         });
     }
     return res.status(200).json({
         status: "success",
         message: "Successfully logged in !!",
         data: null,
+        userId: req.user.id
     });
     // res.redirect('/signin/success');
     // res.redirect('/signup/failure');
@@ -64,6 +66,7 @@ router.post('/signup', passport.authenticate('local-signup', {
         status: "success",
         message: "Successfully registered or logged in (if already registered)!!",
         data: null,
+        userId: req.user.id
     });
     // if(req.user.type === 'buyer') res.redirect('/signup/success');
     // if(req.user.type === 'farmer') res.redirect('/signup/success');
