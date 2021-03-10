@@ -7,10 +7,24 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
- 
-        username: {
+        
+        name: {
             type: Sequelize.TEXT,
             allowNull: false
+        },
+
+        mobile: {
+            type: Sequelize.BIGINT,
+            allowNull: false
+        },
+
+        username: {
+            type: Sequelize.TEXT,
+            // allowNull: false
+        },
+
+        email: {
+            type: Sequelize.TEXT,
         },
  
         type : {
@@ -24,7 +38,7 @@ module.exports = function(sequelize, Sequelize) {
         },
  
         last_login: {
-            type: Sequelize.DATE
+            type: Sequelize.DATE(new Date())
         },
  
         status: {

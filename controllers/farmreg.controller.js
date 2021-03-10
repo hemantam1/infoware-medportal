@@ -49,11 +49,53 @@ exports.reg10 = function(req, res){
     res.render('farmer_register10.ejs', {pid: req.params.id});
 }
 
-exports.reg1p = function(req, res){
+exports.reg1p = function (req, res){
     // console.log(req.body);
     var fpd = req.body;
     var pid = req.params.id;
     fpd.userid = pid;
+    
+    // var array=[];
+    // models.fpdetails.findAll({
+    //     where: {}
+    // }).then(result=>{
+    //     array=result;
+    //     console.log(array);
+    //     for(var i=0;i<array.length;i++){
+    //         if(array[i].userid==pid){
+    //             return res.status(400).json({
+    //                 status: "failure",
+    //                 message: "User has already filled this form!!",
+    //             });
+    //         }
+    //     }
+
+    //     models.fpdetails.create(fpd)
+    //     .then(function(result){
+    //         console.log(result);
+    //         return res.status(200).json({
+    //             status: "success",
+    //             message: "Successfully filled the details!!",
+    //             data: result,
+    //         });
+    //     }).catch(error => {
+    //         console.log(error);
+    //         return res.status(400).json({
+    //             status: "failure",
+    //             message: "Some error ocurred!",
+    //             data: null,
+    //         });
+    //     });
+
+    // }).catch(error=>{
+    //     console.log(error);
+    //     return res.status(400).json({
+    //         status: "failure",
+    //         message: "Some error ocurred!",
+    //         data: null,
+    //     });
+    // })
+    
     models.fpdetails.create(fpd)
     .then(function(result){
         console.log(result);
@@ -70,6 +112,7 @@ exports.reg1p = function(req, res){
             data: null,
         });
     });
+    
 }
 
 exports.reg2p = function(req, res){

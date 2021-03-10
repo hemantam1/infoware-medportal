@@ -36,7 +36,7 @@ module.exports = function(passport, user) {
  
         {
  
-            usernameField: 'username',
+            usernameField: 'mobile',
  
             passwordField: 'password',
  
@@ -46,7 +46,7 @@ module.exports = function(passport, user) {
  
  
  
-        function(req, username, password, done) {
+        function(req,mobile, password, done) {
  
             var generateHash = function(password) {
  
@@ -54,11 +54,12 @@ module.exports = function(passport, user) {
  
             };
  
- 
- 
+
+            console.log(req.body.mobile+"@MedicinalBazaar.com");
+            
             User.findOne({
                 where: {
-                    username: username
+                    username: req.body.mobile+"@MedicinalBazaar.com"
                 }
             }).then(function(user) {
  
@@ -79,7 +80,13 @@ module.exports = function(passport, user) {
                     var data =
  
                         {
-                            username: username,
+                            name: req.body.name,
+
+                            mobile: req.body.mobile,
+
+                            username: req.body.mobile+"@MedicinalBazaar.com",
+
+                            email: req.body.email,
  
                             password: userPassword,
  
@@ -118,7 +125,7 @@ passport.use('local-signin', new LocalStrategy(
  
         // by default, local strategy uses username and password, we will override with email
  
-        usernameField: 'username',
+        usernameField: 'mobile',
  
         passwordField: 'password',
  
@@ -127,7 +134,7 @@ passport.use('local-signin', new LocalStrategy(
     },
  
  
-    function(req, username, password, done) {
+    function(req, mobile, password, done) {
  
         var User = user;
  
@@ -139,7 +146,7 @@ passport.use('local-signin', new LocalStrategy(
  
         User.findOne({
             where: {
-                username: username
+                username: req.body.mobile+"@MedicinalBazaar.com"
             }
         }).then(function(user) {
  
