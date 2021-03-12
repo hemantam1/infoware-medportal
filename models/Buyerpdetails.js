@@ -15,52 +15,55 @@ module.exports = function(sequelize, Sequelize) {
         surname : {
             type: Sequelize.TEXT
         },
-        profession : {
-            type: Sequelize.TEXT
-        },
-        fhname : {
+
+        basic_qualification:{
             type: Sequelize.TEXT
         },
 
-        hno : {
+        address_society_street_house_number:{
             type: Sequelize.TEXT
         },
 
-        village : {
+        village:{
             type: Sequelize.TEXT
         },
 
-        taluka : {
-            type: Sequelize.TEXT
-        },
-        district : {
-            type: Sequelize.TEXT
-        },
-        pin : {
+        taluka:{
             type: Sequelize.TEXT
         },
 
-        email : {
+        district:{
             type: Sequelize.TEXT
         },
 
-        phoneno : {
+        pin:{
             type : Sequelize.BIGINT
         },
 
-        mobileno : {
+        phone : {
             type : Sequelize.BIGINT
         },
 
-        whatphoneno : {
+        mobile : {
             type : Sequelize.BIGINT
         },
-        telegphoneno : {
+
+        whatsapp : {
             type : Sequelize.BIGINT
         },
-        aadharno : {
+
+        telegram : {
             type : Sequelize.BIGINT
         },
+
+        email_id:{
+            type: Sequelize.TEXT
+        },
+
+        aadhar_no : {
+            type : Sequelize.BIGINT
+        },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

@@ -7,20 +7,31 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
- 
+
+        yes_or_no:{
+            type: Sequelize.TEXT
+        },
+
+        main_reasons_you_trust_them  : {
+            type: Sequelize.JSON,
+        },
+
+        who_is_your_current_main_supplier:{
+            type: Sequelize.TEXT
+        }, 
+
         name: {
             type: Sequelize.TEXT
         },
+
+        contact_no: {
+            type: Sequelize.BIGINT
+        }, 
          
         address: {
             type: Sequelize.TEXT
         }, 
-        mobileno: {
-            type: Sequelize.BIGINT
-        }, 
-        typecsup: {
-            type: Sequelize.TEXT
-        },
+        
         userid: {
             type: Sequelize.INTEGER,
             references: {

@@ -7,20 +7,15 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
+
+        yes_or_no:{
+            type: Sequelize.TEXT
+        },
  
-        pname: {
-            type: Sequelize.TEXT
+        list_of_all_records_entered_by_buyer : {
+            type: Sequelize.JSON,
         },
-         
-        tribal: {
-            type: Sequelize.TEXT
-        }, 
-        farmer: {
-            type: Sequelize.TEXT
-        }, 
-        state: {
-            type: Sequelize.TEXT
-        },
+        
         userid: {
             type: Sequelize.INTEGER,
             references: {

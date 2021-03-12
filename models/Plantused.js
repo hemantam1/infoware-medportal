@@ -8,39 +8,10 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
  
-        pname: {
-            type: Sequelize.TEXT
+        list_of_all_records_entered_by_buyer : {
+            type: Sequelize.JSON,
         },
- 
-        variety : {
-            type: Sequelize.TEXT
-        },
-
-        part : {
-            type: Sequelize.TEXT
-        },
-
-        form : {
-            type: Sequelize.DATE
-        },
-
-        consump : {
-            type: Sequelize.BIGINT
-        },
-
-        endapp : {
-            type: Sequelize.TEXT
-        },
-
-        stateofsup : {
-            type: Sequelize.TEXT
-        },
-        organic : {
-            type: Sequelize.TEXT
-        },
-        rate : {
-            type: Sequelize.BIGINT
-        },
+        
         userid: {
             type: Sequelize.INTEGER,
             references: {

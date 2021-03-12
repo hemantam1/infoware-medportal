@@ -122,15 +122,6 @@ exports.reg3p = function(req, res){
 }
 
 exports.reg4p =  function(req, res){
-    // console.log(req.body);
-    // for (var ptest in req.body.ptest) {
-    //     if (req.body.ptest) {
-    //       items = req.body.ptest;
-    //       ptest = JSON.stringify(items).replace(/]|[[]|"/g, '',)
-    //     }
-    // }
-    //   var pid = req.params.id;
-    // //   fpd.userid = pid;
     var fpd = req.body;
     var pid = req.params.id;
     fpd.userid = pid;
@@ -153,15 +144,6 @@ exports.reg4p =  function(req, res){
 }
 
 exports.reg5p =  function(req, res){
-    // console.log(req.body);
-    // for (var test in req.body.test) {
-    //     if (req.body.test) {
-    //       items = req.body.test;
-    //       test = JSON.stringify(items).replace(/]|[[]|"/g, '',)
-    //     }
-    // }
-    //   var pid = req.params.id;
-    // //   fpd.userid = pid;
     var fpd = req.body;
     var pid = req.params.id;
     fpd.userid = pid;
@@ -203,7 +185,6 @@ exports.reg6p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/7/' + req.params.id);
 }
 
 exports.reg7p = function(req, res){
@@ -227,7 +208,6 @@ exports.reg7p = function(req, res){
             data: null,
         });
     });
-    // res.redirect('/register/farmer/8/' + req.params.id);
 }
 
 exports.reg8p = function(req, res){

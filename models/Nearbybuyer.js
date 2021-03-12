@@ -7,6 +7,10 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
+
+        yes_or_no:{
+            type: Sequelize.TEXT
+        },
  
         name: {
             type: Sequelize.TEXT

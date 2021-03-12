@@ -7,25 +7,15 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
+
+        yes_or_no:{
+            type: Sequelize.TEXT
+        },
  
-        pname: {
-            type: Sequelize.TEXT
-        }, 
-        formpart: {
-            type: Sequelize.TEXT
+        list_of_all_records_entered_by_buyer : {
+            type: Sequelize.JSON,
         },
-         
-        test: {
-            type: Sequelize.TEXT
-        },
-         
-        requirement: {
-            type: Sequelize.BIGINT
-        },
-         
-        price: {
-            type: Sequelize.BIGINT
-        },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {

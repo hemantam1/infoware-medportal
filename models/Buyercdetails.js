@@ -8,11 +8,19 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
  
-        nameofcomp: {
+        name_of_the_company_organization: {
+            type: Sequelize.TEXT
+        },
+
+        type_of_organization:{
             type: Sequelize.TEXT
         },
  
-        nameofhead : {
+        name_of_the_head_of_the_company : {
+            type: Sequelize.TEXT
+        },
+
+        specify_organization:{
             type: Sequelize.TEXT
         },
 
@@ -20,30 +28,34 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.TEXT
         },
 
-        email : {
+        phone : {
+            type : Sequelize.BIGINT
+        },
+
+        mobile : {
+            type : Sequelize.BIGINT
+        },
+
+        whatsapp : {
+            type : Sequelize.BIGINT
+        },
+
+        telegram : {
+            type : Sequelize.BIGINT
+        },
+
+        email_id:{
             type: Sequelize.TEXT
         },
 
-        phoneno : {
+        gstin_no : {
             type : Sequelize.BIGINT
         },
 
-        mobileno : {
+        cin_no : {
             type : Sequelize.BIGINT
         },
-
-        whatphoneno : {
-            type : Sequelize.BIGINT
-        },
-        telegphoneno : {
-            type : Sequelize.BIGINT
-        },
-        gstin : {
-            type : Sequelize.BIGINT
-        },
-        cin : {
-            type : Sequelize.BIGINT
-        },
+        
         userid: {
             type: Sequelize.INTEGER,
             references: {

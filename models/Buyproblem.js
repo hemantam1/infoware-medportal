@@ -8,9 +8,10 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
  
-        problem: {
-            type: Sequelize.TEXT
+        list_of_all_records_entered_by_buyer : {
+            type: Sequelize.JSON,
         },
+        
         userid: {
             type: Sequelize.INTEGER,
             references: {

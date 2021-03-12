@@ -8,9 +8,10 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
  
-        date: {
+        date_of_filling_this_registration_form: {
             type: Sequelize.DATE
         },
+        
         userid: {
             type: Sequelize.INTEGER,
             references: {

@@ -7,16 +7,31 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
- 
-        labname: {
+
+        yes_or_no:{
             type: Sequelize.TEXT
         },
+
+        in_house_laboratory_testing:{
+            type: Sequelize.TEXT
+        },
+
+        outside_laboratory_testing:{
+            type: Sequelize.TEXT
+        },
+
+        name: {
+            type: Sequelize.TEXT
+        },
+
+        contact_no: {
+            type: Sequelize.BIGINT
+        },
+        
         address: {
             type: Sequelize.TEXT
         },
-        mobileno: {
-            type: Sequelize.BIGINT
-        },
+
         userid: {
             type: Sequelize.INTEGER,
             references: {
